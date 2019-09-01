@@ -37,5 +37,8 @@ export PATH=$TOOLCHAIN:$PATH;
 # the target host.
 export CC_arm_unknown_linux_gnueabihf="$TOOLCHAIN/gcc-sysroot"
 
+# This is needed/supported by the cross compilation of TensorFlow Lite.
+export TARGET_TOOLCHAIN_PREFIX=arm-linux-gnueabihf
+
 flags="--target=arm-unknown-linux-gnueabihf";
 $HOME/.cargo/bin/cargo "$@" $flags;
